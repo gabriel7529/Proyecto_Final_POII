@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>POSTRES</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Lista de Postres</h1>
+		<a href="/reporte3" class="btn btn-primary">Descargar Listado</a>
+		<br>
+		<table class="table table-dark">
+			<thead>
+				<tr>
+					<th scope="col">Codigo</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Precio</th>
+					<th scope="col">Estado</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="p : ${lstPostres}">
+					<th scope="row" th:text="${p.id_postres}"></th>
+					<td th:text="${p.des_postres}"></td>
+					<td th:text="${p.pre_postres}"></td>
+					<td th:text="${p.est_postres}"></td>
+					<td>
+						<form action="/postres/consultar" method="post">
+							<input type="hidden" name="id_postres" th:value="${p.id_postres}">
+							<button type="submit" class="btn btn-info">Consultar</button>
+							
+						</form>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+</html>

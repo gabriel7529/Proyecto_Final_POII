@@ -1,0 +1,88 @@
+-- borra la bd si existe
+DROP DATABASE IF EXISTS RESTAURANTE;
+-- creamos la bd
+CREATE DATABASE RESTAURANTE;
+-- activamos la bd
+USE RESTAURANTE;
+
+CREATE TABLE tb_usuarios(
+codigo_usua  int auto_increment,
+nombre_usua varchar(15),
+ape_usua varchar(25),
+user_usua char(45) NOT NULL unique,
+clave_usua char(100),
+primary key (codigo_usua)
+);
+
+create table tb_lacteos(
+id_lacteo char(5) not null,
+des_lacteo varchar(45) not null,
+pre_lacteo decimal(8,2) not null,
+est_lacteo boolean,
+primary key (id_lacteo)
+);
+
+create table tb_sopas(
+id_sopa char(5) not null,
+des_sopa varchar(45) not null,
+pre_sopa decimal(8,2) not null,
+est_sopa boolean,
+primary key (id_sopa)
+);
+
+create table tb_entrada(
+id_entrada char(5) not null,
+des_entrada varchar(45) not null,
+pre_entrada decimal(8,2) not null,
+est_entrada boolean,
+primary key (id_entrada)
+);
+
+create table tb_postres(
+id_postres char(5) not null,
+des_postres varchar(45) not null,
+pre_postres decimal(8,2) not null,
+est_postres boolean,
+primary key (id_postres)
+);
+
+insert into tb_usuarios values (null,'Juan', 'Perez','peres@gmail.com', 'juan');
+insert into tb_usuarios values (null,'Jose', 'Lopez','lopes@gmail.com', 'jose');
+insert into tb_usuarios values (null,'luis', 'Castro','castro@gmail.com', 'luis');
+insert into tb_usuarios values (null,'Milagros', 'Borja','milagros@gmail.com', 'borja');
+insert into tb_usuarios values (null,'Ignacio', 'quispe','quispe@profe.com', 'ignacio');
+
+insert into tb_lacteos values ('L0001','Limonada Frozen',3.00,1);
+insert into tb_lacteos values ('L0002','Jugos de Fresa',3.00,1);
+insert into tb_lacteos values ('L0003','Cerveza',7.00,1);
+insert into tb_lacteos values ('L0004','Vino',18.00,1);
+insert into tb_lacteos values ('L0005','Chicha',5.00,1);
+insert into tb_lacteos values ('L0006','Leche malteada',5.00,1);
+
+insert into tb_entrada values ('E0001','Causa Rellena',10.00,1);
+insert into tb_entrada values ('E0002','Papa a la Huancaina',8.00,1);
+insert into tb_entrada values ('E0003','Tamales',5.00,1);
+insert into tb_entrada values ('E0004','Soltero de Queso',7.00,1);
+insert into tb_entrada values ('E0005','Rocoto Relleno',10.00,1);
+insert into tb_entrada values ('E0006','Anticuchos',5.00,1);
+
+
+insert into tb_sopas values ('S0001','Sopa de Verdura',5.00,1);
+insert into tb_sopas values ('S0002','Sopa a la Minuta',5.00,1);
+insert into tb_sopas values ('S0003','Sopa de Pollo',6.00,1);
+insert into tb_sopas values ('S0004','Sopa Wantan',6.00,1);
+insert into tb_sopas values ('S0005','Aguadito de Pollo',5.00,1);
+insert into tb_sopas values ('S0006','Sopa levanta muertos',5.00,1);
+
+insert into tb_postres values ('P0001','Helado de Fresa',3.00,1);
+insert into tb_postres values ('P0002','Helado de Piña',3.00,1);
+insert into tb_postres values ('P0003','Tres leches',5.00,1);
+insert into tb_postres values ('P0004','Pastel',5.00,1);
+insert into tb_postres values ('P0005','Mazamorra',5.00,1);
+insert into tb_postres values ('P0006','Suspiro limeño',8.00,1);
+
+select * from tb_usuarios;
+select * from tb_entrada;
+select * from tb_sopas;
+select * from tb_postres;
+select * from tb_lacteos;
