@@ -13,12 +13,14 @@ public class Sopas {
 	private String des_sopa;
 	private double pre_sopa;
 	private int est_sopa;
-	public Sopas(String id_sopa, String des_sopa, double pre_sopa, int est_sopa) {
+	private String imagen; 
+	public Sopas(String id_sopa, String des_sopa, double pre_sopa, int est_sopa, String imagen) {
 		super();
 		this.id_sopa = id_sopa;
 		this.des_sopa = des_sopa;
 		this.pre_sopa = pre_sopa;
 		this.est_sopa = est_sopa;
+		this.imagen = imagen;
 	}
 	
 	public Sopas() {
@@ -55,6 +57,14 @@ public class Sopas {
 
 	public void setEst_sopa(int est_sopa) {
 		this.est_sopa = est_sopa;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 	
 	

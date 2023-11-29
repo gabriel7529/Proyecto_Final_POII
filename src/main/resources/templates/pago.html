@@ -2,25 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Pago </title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <title>Pago </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-<div class="container">
-		
+    <div class="container">
 
-	<div class="container">
-		<h1>EL PAGO FUE REALIZADO CON EXITO</h1><br>
-		<h1>GRACIAS POR SU COMPRA</h1>
-		<div >
-					
-			
-		
+        <div class="container">
+            <h1>EL PAGO FUE REALIZADO CON ÉXITO</h1><br>
+            <!-- Mostrar información de la compra -->
+            <p>ID de la Compra: <span th:text="${compra.id_compra}"></span></p>
+            <p>Descripción de la Compra: <span th:text="${compra.des_compra}"></span></p>
+            <p>Cantidad de la Compra: <span th:text="${compra.cant_compra}"></span></p>
+
+            <!-- Enlace para retroceder a la lista de compras -->
+            <a href="/compra/listar" class="btn btn-primary">Volver a la Lista de Compras</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 
 </html>

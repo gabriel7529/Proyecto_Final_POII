@@ -88,8 +88,6 @@ public class platosContoller {
 		
 		System.out.println(p);
 		model.addAttribute("postres",repop.findById(p.getId_postres()));
-
-		
 		return "consultaPostres";
 	}
 	

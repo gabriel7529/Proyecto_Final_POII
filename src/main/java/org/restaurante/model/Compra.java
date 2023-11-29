@@ -1,14 +1,16 @@
 package org.restaurante.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_compra")
-
 public class Compra {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_compra;
 	private String des_compra;
 	private int cant_compra;
@@ -19,6 +21,7 @@ public class Compra {
 		this.des_compra = des_compra;
 		this.cant_compra = cant_compra;
 	}
+	
 	
 	public Compra() {
 		
@@ -47,7 +50,4 @@ public class Compra {
 	public void setCant_compra(int cant_compra) {
 		this.cant_compra = cant_compra;
 	}
-	
-	
-	
 }

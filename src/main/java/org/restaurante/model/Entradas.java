@@ -14,13 +14,15 @@ public class Entradas {
 	private String des_entrada;
 	private double pre_entrada;
 	private int est_entrada;
+	private String imagen;
 	
-	public Entradas(String id_entrada, String des_entrada, double pre_entrada, int est_entrada) {
+	public Entradas(String id_entrada, String des_entrada, double pre_entrada, int est_entrada, String imagen) {
 		super();
 		this.id_entrada = id_entrada;
 		this.des_entrada = des_entrada;
 		this.pre_entrada = pre_entrada;
 		this.est_entrada = est_entrada;
+		this.imagen = imagen;
 	}
 	
 	public Entradas() {
@@ -50,6 +52,14 @@ public class Entradas {
 	}
 	public void setEst_entrada(int est_entrada) {
 		this.est_entrada = est_entrada;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 	
 	

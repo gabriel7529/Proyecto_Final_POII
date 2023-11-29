@@ -13,12 +13,15 @@ public class Postres {
 	private String des_postres;
 	private double pre_postres;
 	private int est_postres;
-	public Postres(String id_postres, String des_postres, double pre_postres, int est_postres) {
+	private String imagen; 
+	
+	public Postres(String id_postres, String des_postres, double pre_postres, int est_postres, String imagen) {
 		super();
 		this.id_postres = id_postres;
 		this.des_postres = des_postres;
 		this.pre_postres = pre_postres;
 		this.est_postres = est_postres;
+		this.imagen = imagen;
 	}
 	
 	public Postres() {
@@ -55,6 +58,14 @@ public class Postres {
 
 	public void setEst_postres(int est_postres) {
 		this.est_postres = est_postres;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 	
 	

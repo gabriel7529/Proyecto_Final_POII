@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<div class="container">
+	<div class="container">
 		<ul class="nav nav-tabs">
 			<li class="nav-item">
 				<a class="nav-link" href="/entradas">Entradas</a>
@@ -25,83 +25,60 @@
 		</ul>
 
 
-<div style="width: 4%; float: right;">
-<strong><p>Registre</p></strong>
-	<a href="/login/cargar">
-		<img class="card-img-top" th:src="@{/img/login.jpg}" widht="30" height="30">
-	</a>
-	</div>
-
-	<div class="container">
-		<h1>Eliga la bebida que desee</h1>
-		<div >
-			<br>		
-			
-<div class="row">
-
-			<div class="card" style="width: 18rem;">
-				<img class="card-img-top" th:src="@{/img/bebida1.jpg}" widht="400" height="200">
-				<div class="card-body">
-					<h5 class="card-title">CHICHA MORADA</h5>
-					<p class="card-text">Precio: 10 Soles</p>
-					<a href="/compra/cargar" class="btn btn-primary">Registrar</a>
-				</div>
-			</div>
-			<div class="card" style="width: 18rem;">
-				<img class="card-img-top" th:src="@{/img/bebida2.jpg}" widht="400" height="200">
-				<div class="card-body">
-					<h5 class="card-title">LIMONADA FROZEN</h5>
-					<p class="card-text">Precio: 10 Soles</p>
-					<a href="/compra/cargar" class="btn btn-primary">Registrar</a>
-				</div>
-			</div>
-			<div class="card" style="width: 18rem;">
-				<img class="card-img-top" th:src="@{/img/bebida3.jpg}" widht="400" height="200">
-				<div class="card-body">
-					<h5 class="card-title">GASEOSAS</h5>
-					<p class="card-text">Precio: 8 Soles</p>
-					<a href="/compra/cargar" class="btn btn-primary">Registrar</a>
-				</div>
-			</div>
-			<div class="card" style="width: 18rem;">
-				<img class="card-img-top" th:src="@{/img/bebida4.jpg}" widht="400" height="200">
-				<div class="card-body">
-					<h5 class="card-title">JUGOS</h5>
-					<p class="card-text">Precio: 8 Soles</p>
-					<a href="/compra/cargar" class="btn btn-primary">Registrar</a>
-				</div>
-			</div>
-			<div class="card" style="width: 18rem;">
-				<img class="card-img-top" th:src="@{/img/bebida5.jpeg}" widht="400" height="200">
-				<div class="card-body">
-					<h5 class="card-title">CERVEZAS</h5>
-					<p class="card-text">Precio: 8 Soles</p>
-					<a href="/compra/cargar" class="btn btn-primary">Registrar</a>
-				</div>
-			</div>
-			<div class="card" style="width: 18rem;">
-				<img class="card-img-top" th:src="@{/img/bebida6.jpg}" widht="400" height="200">
-				<div class="card-body">
-					<h5 class="card-title">LICORES</h5>
-					<p class="card-text">Precio: 8 Soles</p>
-					<a href="/compra/cargar" class="btn btn-primary">Registrar</a>
-				</div>
-			</div>
-			
-			
-</div>
-
+		<div style="width: 4%; float: right;">
 			<strong>
-				<div class="form-group">
-					<label for="inputLacteos">Listado de Bebidas</label>
-					<br>
-					<a href="/listar/lacteos" class="btn btn-primary">Ver mas</a>
-				</div>
+				<p>Registre</p>
 			</strong>
-			<br>
-			<br>
-			<a href="/login/cargar" class="btn btn-primary">Salir</a>
-		
+			<a href="/login/cargar">
+				<img class="card-img-top" th:src="@{/img/login.jpg}" widht="30" height="30">
+			</a>
+		</div>
+
+		<br>
+		<strong>
+			<div class="form-group">
+				<label for="inputEntradas">Buscar</label>
+				<br>
+				<a href="/compra/cargar" class="btn btn-primary">Click aqui</a>
+			</div>
+		</strong>
+		<br>
+		<br>
+		<div class="container">
+			<h1>Elige tu plato favorito</h1>
+			<div>
+				<br>
+				<div class="row">
+					<!-- Utilizar Thymeleaf para iterar sobre la lista de platos -->
+					<div th:each="plato : ${listaBebidas}" class="card" style="width: 18rem;">
+						<img class="card-img-top" th:src="@{'/img/' + ${plato.imagen}}" width="400" height="200">
+						<div class="card-body">
+							<h5 class="card-title" th:text="${plato.des_lacteo}"></h5>
+							<p class="card-text" th:text="'Precio: ' + ${plato.pre_lacteo} + ' Soles'"></p>
+							<form th:action="@{'/compra/validarCart'}" method="get">
+								<input type="hidden" name="idPlato" th:value="${plato.des_lacteo}" />
+								<label for="cantidad">Cantidad:</label>
+								<input type="number" name="cantidad" id="cantidad" value="1" min="1" />
+								<label for="vacio"></label><br />
+								<button type="submit" class="btn btn-primary">Registrar</button>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<strong>
+					<div class="form-group">
+						<label for="inputEntradas">Listado de Sopas</label>
+						<br>
+						<a href="/listar/bebidas" class="btn btn-primary">Click aqui</a>
+					</div>
+				</strong>
+				<br>
+				<br>
+				<a href="/login/cargar" class="btn btn-primary">Salir</a>
+			</div>
+		</div>
+	</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>

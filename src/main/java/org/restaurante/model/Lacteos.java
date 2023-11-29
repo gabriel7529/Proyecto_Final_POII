@@ -13,12 +13,15 @@ public class Lacteos {
 	private String des_lacteo;
 	private double pre_lacteo;
 	private int est_lacteo;
-	public Lacteos(String id_lacteo, String des_lacteo, double pre_lacteo, int est_lacteo) {
+	private String imagen;
+	
+	public Lacteos(String id_lacteo, String des_lacteo, double pre_lacteo, int est_lacteo, String imagen) {
 		super();
 		this.id_lacteo = id_lacteo;
 		this.des_lacteo = des_lacteo;
 		this.pre_lacteo = pre_lacteo;
 		this.est_lacteo = est_lacteo;
+		this.imagen = imagen;
 	}
 	
 	public Lacteos() {
@@ -55,6 +58,14 @@ public class Lacteos {
 
 	public void setEst_lacteo(int est_lacteo) {
 		this.est_lacteo = est_lacteo;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 	
 	

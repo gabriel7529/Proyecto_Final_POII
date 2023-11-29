@@ -26,13 +26,13 @@
 					<td th:text="${e.des_compra}"></td>
 					<td th:text="${e.cant_compra}"></td>
 					<td>
-						<a href="/compra/pagar" class="btn btn-primary">Pagar</a>
-						</form>
+						<a th:href="@{'/compra/pagar?idCompra=' + ${e.id_compra}}" class="btn btn-primary">Pagar</a>
 					</td>
-
 				</tr>
 			</tbody>
 		</table>
+		
+		<a href="/entradas" class="btn btn-primary">Volver al Menú</a>
 		
 		
 	</div>
